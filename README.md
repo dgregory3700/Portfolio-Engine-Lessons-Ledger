@@ -1,59 +1,67 @@
-# Portfolio-Engine-Lessons-Ledger
-Canonical Reference System for Reusable Troubleshooting Knowledge
+# Portfolio Engine Lessons Ledger
 
-Purpose (Non-Negotiable)
+### Canonical Reference System for Reusable Troubleshooting Knowledge
 
-The Portfolio Engine Lessons Ledger exists to:
+---
 
-Preserve hard-won troubleshooting knowledge
+## Purpose (Non-Negotiable)
 
-Prevent repeated investigation of already-solved problems
+The **Portfolio Engine Lessons Ledger** exists to:
 
-Allow rapid rehydration of context in new chat sessions
+- Preserve hard-won troubleshooting knowledge  
+- Prevent repeated investigation of already-solved problems  
+- Allow rapid rehydration of context in new chat sessions  
+- Act as a shared memory substrate between you and me  
 
-Act as a shared memory substrate between you and me
+This is **not** a narrative log.  
+This is **not** conversational.  
+This is **not** blended into other sessions.
 
-This is not a narrative log.
-This is not conversational.
-This is not blended into other sessions.
+Each entry is **atomic**, **self-contained**, and **reusable**.
 
-Each entry is atomic, self-contained, and reusable.
+---
 
-Structural Rules (Important)
+## Structural Rules (Important)
 
-Each Ledger Entry must follow this exact structure:
+Each Ledger Entry **must** follow this exact structure:
 
-Ledger ID + Title (Known Issue Name)
-
-Quick Recognition Test (short, human-readable)
-
-Root Cause (Canonical Diagnosis)
-
-What NOT to Waste Time On
-
-Canonical Fix Pattern (AI-Oriented Section)
-
-When to Apply This Again
+1. **Ledger ID + Title** (Known Issue Name)  
+2. **Quick Recognition Test** (short, human-readable)  
+3. **Root Cause** (Canonical Diagnosis)  
+4. **What NOT to Waste Time On**  
+5. **Canonical Fix Pattern** (AI-Oriented Section)  
+6. **When to Apply This Again**
 
 This structure is optimized so:
 
-You can skim and recognize the issue in seconds
+- You can skim and recognize the issue in seconds  
+- I can consume the body and act **without rediscovery**
 
-I can consume the body and act without rediscovery
+---
 
-Storage Recommendation
+## Storage Recommendation
 
-You can store this Ledger in any of the following (all are valid):
+You can store this Ledger in **any** of the following (all are valid):
 
-A dedicated markdown file (PORTFOLIO_ENGINE_LESSONS.md)
+- A dedicated markdown file (`PORTFOLIO_ENGINE_LESSONS.md`)  
+- A Notion page with one section per entry  
+- A private GitHub repo  
+- A local text file  
+- Direct copy-paste into a new chat when needed  
 
-A Notion page with one section per entry
+**The key rule:**
 
-A private GitHub repo
+> 👉 **Entries are copied in whole, never paraphrased.**
 
-A local text file
+---
 
-Direct copy-paste into a new chat when needed
+## Status
 
-The key is:
-👉 Entries are copied in whole, never paraphrased.
+This repository is intentionally minimal.  
+It exists to store **durable troubleshooting knowledge**, not discussion.
+
+New entries are added **only** when a problem has been:
+- fully understood  
+- correctly diagnosed  
+- and definitively resolved
+
