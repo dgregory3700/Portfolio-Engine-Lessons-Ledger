@@ -46,6 +46,8 @@ PostgreSQL correctly raised:
 
 column reference "user_id" is ambiguous
 
+sql
+Copy code
 
 However, when surfaced through **PostgREST** (Supabase’s RPC layer), this error was **sometimes misreported** as:
 
@@ -120,4 +122,48 @@ grant execute on function public.add_user_credits_v2(uuid, integer) to authentic
 grant execute on function public.add_user_credits_v2(uuid, integer) to anon;
 
 select pg_notify('pgrst', 'reload schema');
+Application Code Rules
+Call only the new _v2 function
+
+Do not expect return data
+
+Treat the RPC as a side-effect operation
+
+Remove all legacy parameter names (e.g. p_amount)
+
+5. When to Apply This Again
+Apply this lesson any time:
+
+Stripe webhooks mutate state via Supabase RPC
+
+RPC calls return unexplained HTTP 500 errors
+
+Errors reference schema cache inconsistently
+
+A function returns a table but is used only for side effects
+
+Column and parameter naming overlaps exist
+
+This pattern will recur in:
+
+Credit systems
+
+Subscription entitlements
+
+Usage metering
+
+Feature gating
+
+Quota enforcement
+
+6. Resolution Confirmation
+Stripe webhook returns HTTP 200
+
+Credits increment atomically
+
+Dashboard reflects updated balance
+
+No Stripe retries
+
+Issue permanently resolved via v2 RPC
 
