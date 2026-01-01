@@ -65,3 +65,24 @@ New entries are added **only** when a problem has been:
 - correctly diagnosed  
 - and definitively resolved
 
+---
+
+## Ledger Index
+
+This index lists all confirmed, reusable troubleshooting lessons in the  
+**Portfolio Engine Lessons Ledger**.
+
+Each entry represents a **fully diagnosed and resolved issue** that should **not be rediscovered**.
+
+> **Rule:** Ledger entries are copied in whole, never paraphrased.
+
+---
+
+### 📘 Ledger Entries
+
+- **[PEL-001]**  
+  **Stripe Webhook Returns 500 Due to Ambiguous Supabase RPC Function**  
+  Path: [`ledger/001-stripe-supabase-rpc-ambiguity.md`](ledger/001-stripe-supabase-rpc-ambiguity.md)  
+  _Stripe · Supabase · PostgREST · RPC · SQL function design_
+
+---
