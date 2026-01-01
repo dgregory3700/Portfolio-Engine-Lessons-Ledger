@@ -11,7 +11,7 @@
 
 ---
 
-## 1. Quick Recognition Test (Read This First)
+## 1. Quick Recognition Text (Read This First)
 
 You are very likely encountering **this exact issue** if:
 
