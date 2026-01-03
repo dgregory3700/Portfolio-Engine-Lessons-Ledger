@@ -1,39 +1,44 @@
-# Ledger ID: PE-LEDGER-ENTROPY-VERCEL-TS-CREDITS-CONTRACT
-## Title: TypeScript Build Failure from Unstable Credits Contract Across API Routes
+# Ledger ID: PE-LEDGER-IDEMPOTENCY-CREDITS-CONTRACT-HARDENING
+## Title: Credit System Idempotency Failure from Unstable Credits Contract
 
 ---
 
 ## Quick Recognition Text
-Vercel build fails with TypeScript errors stating that `credits_remaining` does not exist or is possibly `undefined` when accessed in API routes.
+Webhook or API credit logic appears correct, but Vercel build fails or runtime behavior is unsafe due to inconsistent credit field naming and optional values.
 
 ---
 
 ## Root Cause (Canonical Diagnosis)
-The `CreditsRow` type exported from `lib/credits.ts` did not match the expectations of multiple API routes.  
-Specifically:
-- Some routes required `credits.credits_remaining` to exist and be a number.
-- The shared credits module exposed optional or mismatched fields (`balance` vs `credits_remaining`).
-- TypeScript correctly flagged this as unsafe during build, causing Vercel compilation failure.
+The credit system relied on a shared `CreditsRow` object whose shape was not stable across the system.
 
-The failure was caused by an **unstable data contract** between the credits library and its consumers.
+Specifically:
+- Some Supabase RPCs returned `balance`
+- API routes and guards expected `credits_remaining`
+- The shared credits library exposed optional or ambiguous fields
+- TypeScript correctly blocked deployment
+- Runtime idempotency guarantees were undermined by contract ambiguity
+
+This was a **credit system hardening failure**, not a Stripe or Supabase failure.
 
 ---
 
 ## What NOT to Waste Time On
-- Patching individual API routes with optional chaining or fallback logic.
-- Adding conditional checks (`??`, `||`, `if (!credits)`) in multiple call sites.
-- Suppressing TypeScript errors or weakening types.
-- Debugging Supabase RPC behavior beyond confirmed return shapes.
+- Adding optional chaining or fallbacks in API routes
+- Patching individual webhook handlers
+- Weakening TypeScript types
+- Treating idempotency as “only a database concern”
+- Debugging Stripe retries when the contract is unstable
 
 ---
 
 ## Canonical Fix Pattern (AI-Oriented Section)
-Stabilize the contract at the source.
+**Stabilize the credit contract at the library boundary.**
 
-Enforce a **single canonical shape** for credits returned from `lib/credits.ts`:
-- `credits_remaining` must always exist.
-- It must always be a number.
-- Any backend variance (`balance` vs `credits_remaining`) must be normalized internally.
+The shared credits module must:
+- Export **one canonical credit field**
+- Guarantee it always exists
+- Normalize backend variance internally
+- Enforce idempotency through atomic RPCs
 
 ### Canonical `lib/credits.ts`
 ```ts
