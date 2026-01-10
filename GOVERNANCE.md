@@ -54,3 +54,37 @@ Every work session must begin with this block.
 
 ## SSP Template
 
+
+---
+
+## SSP Rules
+
+- **One venture per session**
+- **One objective per session**
+- Mode must be explicitly declared
+- “Done” must be binary-verifiable
+- Constraints override default behavior
+- Memory is opt-in and intentional
+
+---
+
+# III. Authority
+
+Execution Doctrine governs **how** work is done.  
+SSP governs **what** is done in this session.
+
+If a conflict exists:
+> **Execution Doctrine wins unless SSP explicitly overrides it.**
+
+---
+
+# IV. Change Control
+
+To change either:
+- State the change explicitly  
+- Declare it doctrine- or SSP-level  
+- Confirm whether memory should be updated  
+
+Until changed, this system governs all SaaS work.
+
+
