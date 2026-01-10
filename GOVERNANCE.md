@@ -1,0 +1,56 @@
+# SaaS Operating System  
+**Execution Doctrine v1.0 + Session Start Protocol (SSP v1.0)**
+
+This document defines how all SaaS ventures are built, operated, and executed.  
+It applies across all projects (e.g., HarmonyDesk, ContentVeritas) unless explicitly overridden.
+
+---
+
+# I. Execution Doctrine (Global, Persistent)
+
+## 1. Operating Environment
+- **Vercel-first**
+- Production deployments are the test harness
+- Local development avoided unless unavoidable
+- GitHub is the single source of truth (Web UI or GitHub Desktop preferred)
+
+## 2. Code Handling Rules
+- Prefer **full-file replacement** over partial diffs
+- Do not edit or invent file contents without seeing the file
+- The assistant must **ask to see files** before making changes
+- No speculative folder structures, routes, or schemas
+
+## 3. Validation Loop
+1. Write or update file  
+2. Commit to GitHub  
+3. Deploy via Vercel  
+4. Inspect deployment logs  
+5. Iterate based on real runtime behavior  
+
+Local simulations are not authoritative.
+
+## 4. SaaS Factory Pipeline
+1. Idea validation  
+2. Domain purchase  
+3. GitHub repository  
+4. Vercel deployment  
+5. Supabase  
+6. SendGrid  
+7. Stripe or LemonSqueezy  
+8. Public launch  
+9. Post-launch hardening  
+
+## 5. Scope Philosophy
+- Shipping beats polishing  
+- Production truth beats theory  
+- Deletion beats complexity  
+- Observability beats elegance  
+
+---
+
+# II. Session Start Protocol (SSP)
+
+Every work session must begin with this block.
+
+## SSP Template
+
