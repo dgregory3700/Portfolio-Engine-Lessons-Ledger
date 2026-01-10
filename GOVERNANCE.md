@@ -54,6 +54,28 @@ Every work session must begin with this block.
 
 ## SSP Template
 
+Context: <Venture Name>
+
+Mode: <Primary Mode> (+ <Secondary Mode>)
+
+Objective: <Concrete outcome>
+
+Time Horizon: <Duration or deadline>
+
+Definition of Done:
+
+…
+
+…
+
+…
+
+Constraints:
+
+… (optional)
+
+Memory: <Do not retain | Retain if stable | Update venture memory>
+
 
 ---
 
