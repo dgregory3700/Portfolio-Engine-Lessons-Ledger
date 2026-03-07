@@ -72,7 +72,7 @@ Every venture follows this standardized lifecycle:
 3. GitHub repository creation  
 4. Vercel deployment  
 5. Supabase integration  
-6. SendGrid integration  
+6. SendGrid or Resend integration  
 7. Stripe or LemonSqueezy integration  
 8. Public launch  
 9. Post-launch hardening  
