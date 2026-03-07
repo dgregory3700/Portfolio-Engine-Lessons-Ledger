@@ -90,7 +90,7 @@ All third-party services must:
 
 Primary services include:
 - Supabase  
-- SendGrid  
+- SendGrid or Resend
 - Stripe or LemonSqueezy  
 - Vercel  
 
