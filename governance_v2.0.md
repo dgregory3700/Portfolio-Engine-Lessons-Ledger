@@ -1,5 +1,5 @@
 # GOVERNANCE.md  
-**SaaS Operating System — Execution Doctrine v1.0**
+**SaaS Operating System — Execution Doctrine v1.1**
 
 This repository operates under a standardized execution system designed to ensure consistency, velocity, and production-grade outcomes across all SaaS ventures.
 
