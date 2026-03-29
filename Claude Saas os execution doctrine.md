@@ -86,18 +86,26 @@ Every work session must begin with this block.
 ### SSP Template
 
 ```
-Context:       <Venture Name>
-Mode:          <Primary Mode> (+ <Secondary Mode>)
-Tools:         <Chat only | Chat + Chrome | Chat → Claude Code>
-Objective:     <Concrete outcome>
-Time Horizon:  <Duration or deadline>
+Context:        <Venture Name>
+Mode:           <Primary Mode> (+ <Secondary Mode>)
+Tools:          <Chat only | Chat + Chrome | Chat → Claude Code>
+Objective:      <Concrete outcome for this session>
+Time Horizon:   <Duration or deadline>
+
+Last Session:   <One sentence — what was completed>
+Current State:  <One sentence — where things stand right now>
+Blocking Risks: <Any known issues or unknowns that could block progress>
 
 Definition of Done:
   - ...
   - ...
 
-Constraints:   (optional)
-Memory:        <Do not retain | Retain if stable | Update venture memory>
+Files to Load:
+  - <filename> — reason needed
+  - <filename> — reason needed
+
+Constraints:    (optional)
+Memory:         <Do not retain | Retain if stable | Update venture memory>
 ```
 
 ### SSP Rules
@@ -105,10 +113,34 @@ Memory:        <Do not retain | Retain if stable | Update venture memory>
 - **One venture per session**
 - **One objective per session**
 - Mode must be explicitly declared
-- Tools line declares which Claude tools are active for this session `[new]`
+- Tools line declares which Claude tools are active for this session
 - "Done" must be binary-verifiable
 - Constraints override default behavior
 - Memory is opt-in and intentional
+- It is the user's responsibility to paste the SSP, handoff doc, and any listed files at the start of each new session
+
+---
+
+## VI-B. Session Close + Handoff Protocol `[new in v1.1]`
+
+When a session's Definition of Done is met, Claude generates three artifacts before closing:
+
+### 1. Pre-filled SSP for next session
+A completed SSP template ready to paste into the new chat. `Last Session`, `Current State`, and `Files to Load` are filled in based on what was accomplished.
+
+### 2. Handoff doc
+A brief document covering:
+- **What was done** — summary of completed work
+- **Current state** — exact state of the codebase, deployment, or campaign
+- **What's next** — the logical next objective
+- **Open risks** — anything unresolved, untested, or potentially fragile
+- **Decisions made** — key choices made during the session and why
+
+### 3. File list
+An explicit list of files to paste into the next session, with a one-line reason for each. Only files that are actually needed — no padding.
+
+### Handoff rule
+Claude cannot carry memory across sessions on its own. The handoff doc is the bridge. The more complete it is, the faster the next session reaches productive work.
 
 ---
 
@@ -133,4 +165,4 @@ Until changed, this system governs all SaaS work.
 
 ---
 
-*Execution Doctrine v1.1 — updated to include Claude toolchain (Claude.ai chat, Claude in Chrome, Claude Code)*
+*Execution Doctrine v1.1 — updated to include Claude toolchain and Session Close + Handoff Protocol*
