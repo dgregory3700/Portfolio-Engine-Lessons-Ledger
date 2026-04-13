@@ -40,7 +40,7 @@ Local simulations are not authoritative.
 3. GitHub repository  
 4. Vercel deployment  
 5. Supabase  
-6. SendGrid  
+6. SendGrid or Resend  
 7. Stripe or LemonSqueezy  
 8. Public launch  
 9. Post-launch hardening  
@@ -59,3 +59,24 @@ Local simulations are not authoritative.
 Every work session must begin with this block.
 
 ## SSP Template
+
+Context: <Venture Name>
+
+Mode: <Primary Mode> (+ <Secondary Mode>)
+
+Objective: <Concrete outcome>
+
+Time Horizon: <Duration / Deadline>
+
+Definition of Done:
+
+- …
+- …
+- …
+
+Constraints:
+
+- … (optional)
+
+Memory: <Do not retain | Retain if stable | Update venture memory>
+
