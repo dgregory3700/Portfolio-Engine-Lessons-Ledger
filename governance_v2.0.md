@@ -111,7 +111,6 @@ Speculative refactors, hypothetical solutions, and local-only workflows are disc
 ## 8. Scope & Release Discipline
 
 - Features that delay launch are deferred
-- Broken but observable beats perfect but invisible
 - Removal is preferred over complexity
 
 The objective is to get **real users on real infrastructure paying real money** as quickly and safely as possible.
