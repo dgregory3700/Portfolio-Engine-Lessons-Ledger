@@ -85,4 +85,9 @@ Each entry represents a **fully diagnosed and resolved issue** that should **not
   Path: [`ledger/001-stripe-supabase-rpc-ambiguity.md`](ledger/001-stripe-supabase-rpc-ambiguity.md)  
   _Stripe · Supabase · PostgREST · RPC · SQL function design_
 
+  - **[PEL-002]**  
+  **EC2 Outgoing Email — Booking-Created Flow (Resend via Node.js/PM2)**  
+  Path: [`ledger/002-ec2-outgoing-email-booking-flow.md`](ledger/002-ec2-outgoing-email-booking-flow.md)  
+  _EC2 · Node.js · PM2 · Resend · Vercel · Next.js · Supabase · Express_
+
 ---
