@@ -90,4 +90,9 @@ Each entry represents a **fully diagnosed and resolved issue** that should **not
   Path: [`ledger/002-ec2-outgoing-email-booking-flow.md`](ledger/002-ec2-outgoing-email-booking-flow.md)  
   _EC2 · Node.js · PM2 · Resend · Vercel · Next.js · Supabase · Express_
 
+  - **[PEL-003]**  
+  **Express Global JSON Middleware Blocks Raw Body Capture in Webhook Routes**  
+  Path: [`ledger/003-express-raw-body-calcom-webhook.md`](ledger/003-express-raw-body-calcom-webhook.md)  
+  _Express · Node.js · EC2 · PM2 · Cal.com · Webhooks · HMAC · Supabase · body-parser_
+
 ---
