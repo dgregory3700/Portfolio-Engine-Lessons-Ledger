@@ -95,4 +95,9 @@ Each entry represents a **fully diagnosed and resolved issue** that should **not
   Path: [`ledger/003-express-raw-body-calcom-webhook.md`](ledger/003-express-raw-body-calcom-webhook.md)  
   _Express · Node.js · EC2 · PM2 · Cal.com · Webhooks · HMAC · Supabase · body-parser_
 
+  - [PEL-004]
+  Turbopack JSX `Unexpected Token` Errors Misreport Fault Location
+  Path: ledger/004-turbopack-jsx-error-misdirection.md
+  Next.js · Turbopack · Vercel · JSX · React · Build errors
+
 ---
