@@ -21,10 +21,11 @@ The company operates as a coordinated team of five members:
 | Team Member | Department | Primary Responsibility |
 |---|---|---|
 | Duel | Founder / Operator | Direction, judgment, coordination, approvals, final decisions |
-| ChatGPT | Technical Architecture / Systems Builder | Product architecture, SSPs, handoff docs, build strategy, code guidance, system design | Technical Builder / Implementation | Repo-level build execution, coding, implementation, UI/API/database work|
-| Claude | Technical Builder / Implementation | Repo-level build execution, coding, implementation, UI/API/database work |
+| ChatGPT | Technical Architecture / Systems Builder | Product architecture, build strategy, build execution, coding, system design, UI/API/database work |
+| Claude | Technical Architecture / Systems Builder | Product architecture, build strategy, build execution, coding, system design, UI/API/database work |
 | Copilot | Marketing / Distribution | Cold emails, outreach, campaign copy, landing-page variants, sales messaging |
 | Gemini | Product Discovery + Validation | Find market pain, verify demand signals, assess opportunity quality, recommend candidates |
+| Grok | TBA | Currently undefined |
 
 Each department has a distinct role. DuelTech works best when each agent stays in its lane.
 
