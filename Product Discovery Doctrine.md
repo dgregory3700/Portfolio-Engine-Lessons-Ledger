@@ -16,7 +16,7 @@ That means Gemini must find real market pain, verify that the pain is repeated a
 
 DuelTech is a human + AI SaaS company designed to build simple, finished, vertical SaaS products.
 
-The company operates as a coordinated team of five members:
+The company operates as a coordinated team of six members:
 
 | Team Member | Department | Primary Responsibility |
 |---|---|---|
