@@ -24,15 +24,14 @@ This is **not** a narrative log. It is **not** conversational. Each entry is **a
 | Path | Contents |
 |---|---|
 | `ledger/` | **PEL-000 → PEL-016** — atomic, reusable troubleshooting lessons. The core of this repo. |
+| `playbooks/` | Operational SOPs & templates: SP-SOP (+ quick reference), Intake prompt, SSP template, Advisor Access Enablement Checklist. |
 | `status/` | Product freeze/resume markers (e.g., EntropyCleaner). *Not* lessons — current-state notes. |
 | `Notes/` | Working notes & briefs (ContentVeritas Phase-2 plan, Portfolio Engine foundation brief). |
 | `GOVERNANCE.md` | Canonical governance policy (**v2.0**). Binding for all contributors, human or AI. |
 | `Execution Doctrine v1.1.md` | Execution doctrine + Session Start Protocol + Session Close/Handoff Protocol (**v1.1**). |
-| `SP-SOP.md` · `SP-SOP_Quick_Reference.md` | Stripe Provisioning Standard Operating Pipeline. |
-| `SSP TEMPLATE` · `Intake_Promt.md` | Session-start scaffolding and intake prompt. |
-| `Product Discovery Doctrine.md` · `Advisor Access Enablement Checklist.md` · `Cal.com Integration — HarmonyDesk Pro Setup Guide.md` | Operational references. |
+| `Product Discovery Doctrine.md` | Strategic product-discovery doctrine. *(Placement under review — doctrine, not playbook.)* |
 
-> Note: superseded versions (Execution Doctrine v1.0, the prior v1.0 governance doc) were removed from the working tree; they remain recoverable in git history.
+> Note: superseded/obsolete files (Execution Doctrine v1.0, the prior v1.0 governance doc, the retired Cal.com integration guide) were removed from the working tree; all remain recoverable in git history.
 
 ---
 
@@ -49,7 +48,7 @@ Each ledger entry follows this exact structure:
 
 Optimized so a human can recognize the issue in seconds and an AI can consume the body and act without rediscovery.
 
-New entries are added **only** when a problem has been fully understood, correctly diagnosed, and definitively resolved.
+New entries are added **only** when a problem has been fully understood, correctly diagnosed, and definitively resolved. The intake prompt that generates new entries lives at `playbooks/Intake_Prompt.md`.
 
 ---
 
