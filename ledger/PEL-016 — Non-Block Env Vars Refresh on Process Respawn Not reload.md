@@ -1,3 +1,7 @@
+> **⚠️ SUPERSEDED BY PEL-018 (2026-06-09).** The central claim below — that non-block env vars refresh on *any* respawn (including plain `pm2 restart`) and that `pm2 env` "will not show" them — is **WRONG**. Empirical testing on 6/9/26 proved non-block vars refresh **only** on a full recreate (`pm2 delete && pm2 start <ecosystem-file>`); plain `pm2 restart` and `pm2 reload <file>` both fail, and `pm2 env` **does** show them (the ecosystem file's own parse-time `dotenv.config()` injects the whole `.env` into PM2's captured env). The Cat 3G 200/`signature_verified` cited below as conclusive was a **false positive** — the running process still held the old secret, which verified only because it was inside its 24-hour delayed-expiry window. See **PEL-018** for the corrected mechanism, proof, and fix. The text below is retained unedited for historical record.
+
+---
+
 # PEL-016 — Non-Block Env Vars Refresh on Any Process Respawn; `reload <file>` Is Only for Ecosystem env-Block Vars
 
 **Date logged:** June 6, 2026
