@@ -43,3 +43,15 @@ Reusable RLS-enable derivation for any live table:
 - Any `rls_disabled_in_public` ERROR on any DuelTech Supabase product (the 20+ portfolio will hit this on older tables predating the `user_id`/`auth.uid()` convention).
 - Any time you enable/modify RLS on a table a public/unauthenticated route also reads — confirm that route's client first.
 - Any Supabase advisor burn-down: use the absence of `rls_enabled_no_policy` as positive confirmation that policy creation (not just the RLS toggle) succeeded.
+
+---
+
+## Addendum — June 25, 2026 (same-session `search_path` WARN follow-on)
+
+The four `function_search_path_mutable` WARNs listed under "Left in place by design" were closed in the same session, via migration `pin_search_path_trigger_functions` — `ALTER FUNCTION … SET search_path = ''` on `set_timestamp()`, `set_user_settings_updated_at()`, `generate_user_slug(text)`, and `set_user_settings_slug()`. **No body rewrite was needed**, and the reason is the corollary worth keeping:
+
+- Read each body first (`SELECT pg_get_functiondef(oid) …`). All four referenced **only** pg_catalog built-ins (`now`, `regexp_replace`, `md5`, `split_part`, etc. — always resolvable, since pg_catalog is implicitly searched regardless of `search_path`) **or already-`public.`-qualified** objects (`public.user_settings`, `public.generate_user_slug`). When that holds, `search_path = ''` changes nothing at runtime — it only removes the injection vector.
+- The trap to avoid: if a body had referenced a `public.*` object **unqualified**, `search_path = ''` would make the function throw at call time (here that would break `user_settings` provisioning/slug-assignment writes). In that case you must schema-qualify the body in the same migration (`CREATE OR REPLACE`), not just pin the path. So the rule is: **read the body, then choose** bare-pin vs pin-plus-qualify. Never pin blind.
+- Reversible via `ALTER FUNCTION … RESET search_path`.
+
+**Advisor floor reached (post-apply):** zero ERROR, zero avoidable WARN. Remaining are two `rls_enabled_no_policy` INFOs (service-role-only tables, correct) and the two `get_user_id_by_email` SECURITY DEFINER WARNs (anon + authenticated EXECUTE — intentional, load-bearing in the public POST flow). HarmonyDesk is feature-complete and at its security-advisor floor.
