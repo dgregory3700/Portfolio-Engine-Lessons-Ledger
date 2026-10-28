@@ -23,7 +23,7 @@ This is **not** a narrative log. It is **not** conversational. Each entry is **a
 
 | Path | Contents |
 |---|---|
-| `ledger/` | **PEL-000 → PEL-016** — atomic, reusable troubleshooting lessons. The core of this repo. |
+| `ledger/` | **PEL-000 → PEL-041** — atomic, reusable troubleshooting lessons. The core of this repo. |
 | `playbooks/` | Operational SOPs & templates: SP-SOP (+ quick reference), Intake prompt, SSP template, Advisor Access Enablement Checklist. |
 | `status/` | Product freeze/resume markers (e.g., EntropyCleaner). *Not* lessons — current-state notes. |
 | `Notes/` | Working notes & briefs (ContentVeritas Phase-2 plan, Portfolio Engine foundation brief). |
@@ -104,6 +104,72 @@ New entries are added **only** when a problem has been fully understood, correct
 
 - [PEL-016 — Non-Block Env Vars Refresh on Process Respawn Not reload](<ledger/PEL-016 — Non-Block Env Vars Refresh on Process Respawn Not reload.md>)
   _PM2 · non-block env vars · plain `pm2 restart`_
+
+- [PEL-017 — Block Env Vars Refresh on pm2 reload of the Ecosystem File and Show in pm2 env](<ledger/PEL-017 — Block Env Vars Refresh on pm2 reload of the Ecosystem File and Show in pm2 env.md>)
+
+- [PEL-018 — PM2 Non-Block Env Vars Refresh Only on a Full Recreate, Not Restart or reload](<ledger/PEL-018 — PM2 Non-Block Env Vars Refresh Only on a Full Recreate, Not Restart or reload.md>)
+
+- [PEL-019 — Disabling Legacy Supabase Keys Deactivates anon and service_role Together](<ledger/PEL-019 — Disabling Legacy Supabase Keys Deactivates anon and service_role Together.md>)
+
+- [PEL-020 — Dead-Var Verdicts Must Be Derived on the Consuming Surface, Not the Surface It Points At](<ledger/PEL-020 — Dead-Var Verdicts Must Be Derived on the Consuming Surface, Not the Surface It Points At.md>)
+
+- [PEL-021 — Node MCP cmd Shim Name Can Differ From Package Name; Resolve the Real Binary](<ledger/PEL-021 — Node MCP cmd Shim Name Can Differ From Package Name; Resolve the Real Binary.md>)
+
+- [PEL-022 — force-dynamic on a Next.js Layout Does Not Re-Run It on Soft Sibling Nav; a Layout-Sourced Value Needs a Client Poll](<ledger/PEL-022 — force-dynamic on a Next.js Layout Does Not Re-Run It on Soft Sibling Nav; a Layout-Sourced Value Needs a Client Poll.md>)
+
+- [PEL-023 — A Price-Gate Cutover Is Safe Only If the Write Path Emits the Gated Literal; Trace the price_id Writer, Don't Trust the Plan](<ledger/PEL-023 — A Price-Gate Cutover Is Safe Only If the Write Path Emits the Gated Literal; Trace the price_id Writer, Don't Trust the Plan.md>)
+
+- [PEL-024 — Enabling RLS on Live Tables; Mirror an Already-RLS-On Sibling's Policy and Confirm the Public Route's Client Is Service-Role First](<ledger/PEL-024 — Enabling RLS on Live Tables; Mirror an Already-RLS-On Sibling's Policy and Confirm the Public Route's Client Is Service-Role First.md>)
+
+- [PEL-025 — Probe Gate Predicates Against Candidate Sources Empirically Before Spending Run Budget](<ledger/PEL-025 — Probe Gate Predicates Against Candidate Sources Empirically Before Spending Run Budget.md>)
+
+- [PEL-026 — Source Probes Must Replay the Engine's Real Request; Some Hosts Block Automated Clients Outright](<ledger/PEL-026 — Source Probes Must Replay the Engine's Real Request; Some Hosts Block Automated Clients Outright.md>)
+  _probing · user-agent · request headers · regulations.gov · eCFR · govinfo · reginfo_
+
+- [PEL-027 — Measure, Don't Assume, Before Slating a Source](<ledger/PEL-027 — Measure, Don't Assume, Before Slating a Source.md>)
+  _probing · fetch timeout · char windows · extractor offsets · drift markers_
+
+- [PEL-028 — Diag-Before-Run Is the Standing Pre-Run Instrument; Replay the Full Pipeline and Print Criterion Traces](<ledger/PEL-028 — Diag-Before-Run Is the Standing Pre-Run Instrument; Replay the Full Pipeline and Print Criterion Traces.md>)
+  _diag replay · admission gate · run budget · run isolation · OE_MAX_SOURCE_URLS_
+
+- [PEL-029 — Preserve Every Source URL at Read Time; Recover From Exports, Never Reconstruct](<ledger/PEL-029 — Preserve Every Source URL at Read Time; Recover From Exports, Never Reconstruct.md>)
+  _record keeping · URLs · probes · diag reads_
+
+- [PEL-030 — SSH MCP Transport Limits and Error Semantics; Verify State Before Any Retry](<ledger/PEL-030 — SSH MCP Transport Limits and Error Semantics; Verify State Before Any Retry.md>)
+  _SSH MCP · timeouts · exit codes · detached jobs · bridge drops_
+
+- [PEL-031 — Moving Code and Content Over SSH Safely; Quoting Failure Classes and the Routes That Work](<ledger/PEL-031 — Moving Code and Content Over SSH Safely; Quoting Failure Classes and the Routes That Work.md>)
+  _SSH MCP · bash -lc quoting · heredoc · base64 · patchers · scratch hygiene_
+
+- [PEL-032 — pm2 stop Without pm2 save Is Not a Durable Stop](<ledger/PEL-032 — pm2 stop Without pm2 save Is Not a Durable Stop.md>)
+  _PM2 · systemd · resurrect · dump file_
+
+- [PEL-033 — Ledgers Are the Source of Truth for Sequential IDs and Pending Work; Handoff Notes Go Stale](<ledger/PEL-033 — Ledgers Are the Source of Truth for Sequential IDs and Pending Work; Handoff Notes Go Stale.md>)
+  _D-numbers · PEL numbers · OE build-status numbers · handoff staleness_
+
+- [PEL-034 — reginfo and OMB Data Surfaces; Use the Bulk XML and Supporting Statements, Not Scraped Pages](<ledger/PEL-034 — reginfo and OMB Data Surfaces; Use the Bulk XML and Supporting Statements, Not Scraped Pages.md>)
+  _reginfo · PRAXML · ICR inventory · Supporting Statements · docx_
+
+- [PEL-035 — regulations.gov v4 API Search Semantics Are Not What They Look Like](<ledger/PEL-035 — regulations.gov v4 API Search Semantics Are Not What They Look Like.md>)
+  _regulations.gov · API · search · comments · rate limits_
+
+- [PEL-036 — Evidence-Class Ceilings; Know What a Source Type Can and Cannot Prove Before Hunting It](<ledger/PEL-036 — Evidence-Class Ceilings; Know What a Source Type Can and Cannot Prove Before Hunting It.md>)
+  _evidence quality · buyer evidence · WTP · pain evidence · price patterns_
+
+- [PEL-037 — Terrain Screening; Run the Cheapest Kill First and Expect Value to Attract Incumbents](<ledger/PEL-037 — Terrain Screening; Run the Cheapest Kill First and Expect Value to Attract Incumbents.md>)
+  _terrain selection · incumbents · stage zero · screening order_
+
+- [PEL-038 — HTML Region Extraction Pitfalls; Regex Region Pickers Truncate Nested and Card Layouts](<ledger/PEL-038 — HTML Region Extraction Pitfalls; Regex Region Pickers Truncate Nested and Card Layouts.md>)
+  _HTML extraction · region picker · regex · vendor pages_
+
+- [PEL-039 — Harness and Replay Discipline; Fixtures From Measured Text, and Know Which Changes Can Be Replayed](<ledger/PEL-039 — Harness and Replay Discipline; Fixtures From Measured Text, and Know Which Changes Can Be Replayed.md>)
+  _test harness · fixtures · consequence replay · rank sentinels_
+
+- [PEL-040 — Gated-Run Runner Safety; Restore the Gate on Any Exit and Verify From the Log](<ledger/PEL-040 — Gated-Run Runner Safety; Restore the Gate on Any Exit and Verify From the Log.md>)
+  _gate · atomic open/run/close · md5 · run budget · run reports_
+
+- [PEL-041 — Read the Ratified Text Before a Doctrine Arc; and a Second Device Gets Its Own SSH Key](<ledger/PEL-041 — Read the Ratified Text Before a Doctrine Arc; and a Second Device Gets Its Own SSH Key.md>)
+  _doctrine drift · ledger reading · SSH keys · multi-device_
 
 ---
 
